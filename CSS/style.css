@@ -1,0 +1,149 @@
+.sky {
+    --far-cloud-height: 110%;
+    --far-cloud-width: 85%;
+    --far-cloud-top: -10%;
+    --far-cloud-margin: 10%;
+    --far-cloud-a-duration: 55s;
+
+    --close-cloud-1-height: 24%;
+    --close-cloud-1-width: 20%;
+    --close-cloud-1-top: 38%;
+    --close-cloud-1-margin: 10%;
+    --close-cloud-1-a-duration: 15s;
+
+    --close-cloud-2-height: 20%;
+    --close-cloud-2-width: 28%;
+    --close-cloud-2-top: 20%;
+    --close-cloud-2-margin: 10%;
+    --close-cloud-2-a-duration: 20s;
+
+    --close-cloud-3-height: 24%;
+    --close-cloud-3-width: 28%;
+    --close-cloud-3-top: 20%;
+    --close-cloud-3-margin: 10%;
+    --close-cloud-3-a-duration: 10s;
+
+    height: 100vh;
+    width: 100%;
+
+    position: relative;
+
+    background: url(../image/mvehfqz6w2ges2dj.jpg);
+    border: 1px solid blue;
+
+    overflow: hidden;
+}
+
+
+
+.sky__close-cloud-1 {
+    height: var(--close-cloud-1-height);
+    width: var(--close-cloud-1-width);
+
+    position: absolute;
+    top: var(--close-cloud-1-top);
+
+    z-index: 2;
+
+    animation: close-cloud-1 var(--close-cloud-1-a-duration) linear infinite;
+}
+
+@keyframes close-cloud-1 {
+    0% {
+        right: calc(0% - var(--close-cloud-1-margin) - var(--close-cloud-1-width));
+    }
+
+    100% {
+        right: calc(100% + var(--close-cloud-1-margin));
+    }
+}
+
+.sky__close-cloud-2 {
+    height: var(--close-cloud-2-height);
+    width: var(--close-cloud-2-width);
+
+    position: absolute;
+    top: var(--close-cloud-2-top);
+
+    z-index: 3;
+
+    animation: close-cloud-2 var(--close-cloud-2-a-duration) linear infinite;
+}
+
+@keyframes close-cloud-2 {
+    0% {
+        right: calc(0% - var(--close-cloud-2-margin) - var(--close-cloud-2-width));
+    }
+
+    100% {
+        right: calc(100% + var(--close-cloud-2-margin));
+    }
+}
+
+.sky__close-cloud-3 {
+    height: var(--close-cloud-3-height);
+    width: var(--close-cloud-3-width);
+
+    position: absolute;
+    top: var(--close-cloud-3-top);
+
+    z-index: 4;
+
+    animation: close-cloud-3 var(--close-cloud-3-a-duration) linear infinite;
+}
+
+@keyframes close-cloud-3 {
+    0% {
+        right: calc(0% - var(--close-cloud-3-margin) - var(--close-cloud-3-width));
+    }
+
+    100% {
+        right: calc(100% + var(--close-cloud-3-margin));
+    }
+}
+
+.airplane {
+    --airplane-width: 33%;
+    --airplane-height: 28%;
+
+    width: var(--airplane-width);
+    height: var(--airplane-height);
+
+
+    position: absolute;
+    left: calc(50% - calc(var(--airplane-width)/2));
+    top: calc(50% - calc(var(--airplane-height)/2));
+
+    z-index: 10;
+
+    animation: flight 2s linear infinite;
+}
+
+@keyframes flight {
+    0% {}
+
+    25% {
+        transform: translateY(-2%);
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    75% {
+        transform: translateY(2%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.airplane__airframe {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
